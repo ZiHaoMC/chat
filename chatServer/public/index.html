@@ -10,59 +10,47 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
-  <!-- 引入获取IP和地理位置的脚本 -->
   <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
   <script src="https://unpkg.com/qiniu-js@2.4.0/dist/qiniu.min.js"></script>
   <script>
-    // 检查 returnCitySN 是否定义，并提供默认值
-    if (typeof returnCitySN === 'undefined') {
-      var returnCitySN = { "cip": "127.0.0.1", "cid": "00", "cname": "未知" };
-    }
-
-    // 浏览器检测函数
+    // browser
     function myBrowser() {
-      const userAgent = navigator.userAgent;
-      const isOpera = userAgent.indexOf("Opera") > -1;
+      const userAgent = navigator.userAgent
+      const isOpera = userAgent.indexOf("Opera") > -1
       if (isOpera) {
-        return "Opera";
+        return "Opera"
       } else if (userAgent.indexOf("Edge") > -1) {
-        return "Edge";
+        return "Edge"
       } else if (userAgent.indexOf("Firefox") > -1) {
-        return "FireFox";
+        return "FireFox"
       } if (userAgent.indexOf("Chrome") > -1) {
-        return "Chrome";
+        return "Chrome"
       } else if (userAgent.indexOf("Safari") > -1) {
-        return "Safari";
-      } else if (userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera) { // 判断是否IE浏览器
-        alert("请不要使用IE浏览器，建议使用谷歌或火狐浏览器");
-        return "IE";
+        return "Safari"
+      } else if (userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera) { //判断是否IE浏览器
+        alert("球球你不要再用IE了吧(ノへ￣、)，换谷歌、火狐试试")
+        return "IE"
       } else {
-        alert("请不要使用IE浏览器，建议使用谷歌或火狐浏览器");
-        return "IE";
+        alert("球球你不要再用IE了吧(ノへ￣、)，换谷歌、火狐试试")
+        return "IE"
       }
     }
-
-    // 获取操作系统信息和浏览器类型
-    const UserAgent = navigator.userAgent;
-    const OSInfo = UserAgent.substring(UserAgent.indexOf('(') + 1, UserAgent.indexOf(';'));
-    const Browser = myBrowser();
-    window.OSInfo = OSInfo;
-    window.Browser = Browser;
-
+    const UserAgent = navigator.userAgent
+    const OSInfo = UserAgent.substring(UserAgent.indexOf('(')+1,UserAgent.indexOf(';'))
+    const Browser = myBrowser()
+    window.OSInfo = OSInfo
+    window.Browser = Browser
     console.log(
       '%c OS：' + OSInfo + ' %c Browser：' + Browser + ' %c ',
       'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
       'background:#41b883 ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
       'background:transparent'
-    );
-
-    // 使用 returnCitySN 时确保它已定义
+    )
     console.log(
       '%c IP：' + returnCitySN["cip"] + ' %c Country：' + returnCitySN["cname"] + ' %c ',
       'background:#409EFF ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
       'background:#3578E5 ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
       'background:transparent'
-    );
+    )
   </script>
 </html>
-

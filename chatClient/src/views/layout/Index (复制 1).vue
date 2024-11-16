@@ -1,6 +1,6 @@
 <template>
   <div class="layout-page" v-css="{'background-image': 'url(' + bgImgUrl + ')'}">
-    <div v-if="device !== 'Mobile'" class="toggle" @click.stop="setShowMain" title="切换聊天区域是否显示">
+    <div v-if="!device === 'Mobile'" class="toggle" @click.stop="setShowMain" title="切换聊天区域是否显示">
       <i class="icon el-icon-thumb"></i>
     </div>
     <transition name="fade">
@@ -8,7 +8,7 @@
         <my-header></my-header>
         <!-- filter-bgc是用于设置背景虚化的，因为使用了filter以及transform后fixed会改变 -->
         <div
-          v-if="device !== 'Mobile'"
+          v-if="!device === 'Mobile'"
           class="filter-bgc"
           v-css="{
             'filter': 'blur(' + blur + 'px)',

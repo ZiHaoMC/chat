@@ -1,3 +1,10 @@
+// Polyfill for replaceAll to ensure compatibility across environments
+if (!String.prototype.replaceAll) {
+  String.prototype.replaceAll = function(search, replacement) {
+    return this.split(search).join(replacement);
+  };
+}
+
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
@@ -64,3 +71,4 @@ new Vue({
   // template: '<App/>'
   render: h => h(App)
 }).$mount('#app')
+

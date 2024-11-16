@@ -1,6 +1,6 @@
 'use strict'
 module.exports = {
   NODE_ENV: '"production"',
-  IMG_URL: '',
-  SOCKET_URL: '',
+  IMG_URL: '"zcraft.us.kg/api/"',
+  SOCKET_URL: '"zcraft.us.kg/"',
 }
