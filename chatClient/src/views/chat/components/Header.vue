@@ -20,7 +20,7 @@
             <el-tooltip class="item" effect="dark" content="视频通话需要良好的网络环境" placement="top">
               <i class="operation-item iconfont icon-shipin" @click="videoCall"></i>
             </el-tooltip>
-            <el-tooltip class="item" effect="dark" content="视频通话需要良好的网络环境" placement="top">
+            <el-tooltip class="item" effect="dark" content="语音通话需要良好的网络环境" placement="top">
               <i class="operation-item el-icon-phone-outline" @click="audioCall"></i>
             </el-tooltip>
           </span>
