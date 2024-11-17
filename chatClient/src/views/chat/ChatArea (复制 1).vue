@@ -53,7 +53,7 @@
       </div>
       <div class="operation">
         <el-button @click="send" type="success" size="small" round>发送</el-button>
-        <el-button @click="clearMessages" type="danger" size="small" round>清空</el-button>
+        <el-button @click="send" type="danger" size="small" round>清空</el-button>
       </div>
       <div style="display: none" contenteditable="true" class="textarea" @input="test">
 
@@ -147,13 +147,7 @@ export default {
     }
   },
   methods: {
-
-    clearMessages() {
-      this.messageText = ""; // 清空输入框内容
-    //  this.messages = []; // 清空消息列表
-    //  this.scrollBottom = true; // 更新滚动状态（如有需要）
-    },
-            test(e) {
+    test(e) {
       console.log(e, 123132)
     },
     setShowHistoryMsg() {
