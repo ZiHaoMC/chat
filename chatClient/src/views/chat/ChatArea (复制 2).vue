@@ -28,24 +28,7 @@
       </div>
     </div>
     <div class="message-edit-container">
-      
-    <div class="send-type">
-      <!-- 表情按钮 -->
-      <i class="item iconfont icon-emoji" @click.stop="showEmojiCom = !showEmojiCom"></i>
-
-      <!-- 图片上传 -->
-      <i class="item el-icon-picture" @click.stop="showUpImgCom = !showUpImgCom"></i>
-
-      <!-- 视频通话 -->
-      <i class="item iconfont icon-shipin" @click="initiateVideoCall"></i>
-
-      <!-- 语音通话 -->
-      <i class="item el-icon-phone-outline" @click="initiateAudioCall"></i>
-
-      <!-- 白板协作 -->
-      <i class="item iconfont icon-huaban" @click="initiateWhiteboard"></i>
-    </div>
-    
+      <div class="send-type">
         <i class="item iconfont icon-emoji" @click.stop="showEmojiCom = !showEmojiCom"></i>
         <i class="item el-icon-picture" @click.stop="showUpImgCom = !showUpImgCom" />
         <label for="upfile">
@@ -169,37 +152,7 @@ export default {
       this.messageText = ""; // 清空输入框内容
     //  this.messages = []; // 清空消息列表
     //  this.scrollBottom = true; // 更新滚动状态（如有需要）
-    
-    // 启动视频通话
-    initiateVideoCall() {
-      this.$store.dispatch("app/SET_IS_VIDEOING", true);
-      this.$socket.emit("apply", {
-        webRtcType: "video",
-        myNickname: this.$store.state.user.userInfo.nickname,
-      });
-      this.$message.success("正在发起视频通话...");
     },
-
-    // 启动语音通话
-    initiateAudioCall() {
-      this.$store.dispatch("app/SET_IS_AUDIOING", true);
-      this.$socket.emit("apply", {
-        webRtcType: "audio",
-        myNickname: this.$store.state.user.userInfo.nickname,
-      });
-      this.$message.success("正在发起语音通话...");
-    },
-
-    // 启动白板协作
-    initiateWhiteboard() {
-      this.$store.dispatch("app/SET_ISTOCOARTBOARD", true);
-      this.$socket.emit("apply", {
-        webRtcType: "artBoard",
-        myNickname: this.$store.state.user.userInfo.nickname,
-      });
-      this.$message.success("正在发起白板协作...");
-    },
-},
             test(e) {
       console.log(e, 123132)
     },
